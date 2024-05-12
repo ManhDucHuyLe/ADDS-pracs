@@ -1,19 +1,21 @@
-#include <iostream>
+#ifndef AUTOCOMPLETE_H
+#define AUTOCOMPLETE_H
+
 #include <string>
 #include <unordered_map>
 #include <vector>
 
 using namespace std;
 
-struct TrieNode {
-  unordered_map<char, TrieNode*> children;
-  bool isEndOfWord;
-};
-
 class Autocomplete {
  private:
+  struct TrieNode {
+    unordered_map<char, TrieNode*> childNodes;
+    bool isEndOfWord;
+  };
+
   TrieNode* root;
-  void dfs(TrieNode* node, string word, vector<string>& suggestions);
+  void search(TrieNode* node, string word, vector<string>& suggestions);
 
  public:
   Autocomplete();
@@ -22,3 +24,5 @@ class Autocomplete {
 
   vector<string> getSuggestions(string partialWord);
 };
+
+#endif
