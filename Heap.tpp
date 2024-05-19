@@ -58,11 +58,11 @@ Heap<T>::Heap(std::vector<T> start_values) {
 template <typename T>
 void Heap<T>::insert(T value) {
   values.push_back(value);
-  int i = values.size() - 1;
+  int index = values.size() - 1;
 
-  while (i != 0 && values[parent(i)] > values[i]) {
-    std::swap(values[i], values[parent(i)]);
-    i = parent(i);
+  while (index != 0 && values[index] < values[(index - 1) / 2]) {
+    std::swap(values[index], values[(index - 1) / 2]);
+    index = (index - 1) / 2;
   }
 }
 
@@ -100,7 +100,7 @@ T Heap<T>::getMin() {
   if (!values.empty()) {
     return values[0];
   } else {
-    throw std::runtime_error("Error");
+    throw;
   }
 }
 
