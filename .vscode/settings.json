@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.tpp": "csharp",
+        "unordered_map": "cpp"
+    }
+}
