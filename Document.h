@@ -10,6 +10,5 @@ class Document {
   string name;
   int limit;
   Document(int id, string name, int limit);
-  Document();
 };
 #endif

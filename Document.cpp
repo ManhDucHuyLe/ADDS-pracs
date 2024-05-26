@@ -5,9 +5,3 @@ Document::Document(int id, string name, int limit) {
   this->name = name;
   this->limit = limit;
 }
-
-Document::Document() {
-  this->id = 0;
-  this->name = "";
-  this->limit = 0;
-}
